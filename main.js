@@ -9,6 +9,8 @@ function toggleDetails(button) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    alert("Update")
     // Rotating text functionality
     var words = document.querySelectorAll('.cd-words-wrapper b');
     var wordIndex = 0;
