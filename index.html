@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Mpendulo Xulu - Portfolio</title>
+</head>
+<body>
+    <!-- Header Section Code -->
+    <header class="header">
+        <a href="#home" class="logo">Mpendulo Xulu</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+  <!-- Home section Code -->
+  <section class="home" id="home">
+    <div class="home-content">
+        <div class="home-img">
+            <img src="mpendulo.jpg" alt="Mpendulo Xulu">
+        </div>
+        <div class="home-text">
+            <h3>Hello, Myself</h3>
+            <h1>Mpendulo Xulu</h1>
+            <h3>And I'm 
+                <span class="cd-headline clip is-full-width">
+                    <span>a </span>
+                    <span class="cd-words-wrapper">
+                        <b class="is-visible">Full Stack Developer.</b>
+                        <b>Aspiring Junior Coder.</b>
+                        <b>Front-End Developer.</b>
+                    </span>
+                </span>
+            </h3>
+            <div class="social-media">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="https://github.com/MpenduloXulu" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/mpendulo-xulu-76a90221a/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <a href="Mr Mpendulo Xulu.pdf" class="btn" download>Download CV</a>
+        </div>
+    </div>
+</section>
+<!--About section Code-->
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="mpendulo.jpg" alt="About Image">
+    </div>
+    <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>I'm a <span class="highlight">Full Stack Developer</span></h3>
+        <div class="about-text">
+            <p>Aspiring Junior Developer with a solid foundation in software development and a passion for technology. I am presently doing an internship at Honor Technologies Africa, where I gained hands-on experience with ASP.NET Core MVC.</p>
+            <p>My participation in tech competitions like <span class="highlight">World Skills</span> and <span class="highlight">Makerthon</span>, combined with my academic background, demonstrates my ability to apply theoretical knowledge to real-world projects and excel in team environments.</p>
+        </div>
+        <a href="#" class="btn">Read More</a>
+    </div>
+</section>
+
+<!-- Skills Section code -->
+<section class="skills" id="skills">
+    <div class="skills-heading">
+        <h2 class="heading">My <span>Skills</span></h2>
+    </div>
+
+    <div class="skills-container">
+        <div class="skills-box">
+            <div class="skills-content">
+                <i class='bx bx-code-alt'></i>
+                <h3>Web Development</h3>
+                <p>Experienced in building responsive, user-friendly websites using HTML, CSS, JavaScript, and frameworks like React and Node.js. Proficient in front-end and back-end development, with a focus on performance and scalability.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+
+        <div class="skills-box">
+            <div class="skills-content">
+                <i class='bx bx-palette'></i>
+                <h3>UI Designer</h3>
+                <p>Creative UI Designer with a strong focus on crafting intuitive and visually appealing user interfaces. Proficient in design tools like Figma, Sketch, and Adobe XD. Experienced in designing responsive and user-centric layouts.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+
+        <div class="skills-box">
+            <div class="skills-content">
+                <i class='bx bx-mobile-alt'></i>
+                <h3>Application Development</h3>
+                <p>Skilled Application Developer with expertise in creating robust, scalable mobile and web applications. Proficient in languages like Java, Swift, and Python, and experienced with frameworks such as Flutter and React Native.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- projects section code -->
+
+<section class="projects" id="projects">
+    <div class="projects-heading">
+        <h2 class="heading">My <span>Portfolio</span></h2>
+        <span class="subtitle">Visit my portfolio and keep your feedback</span>
+    </div>
+
+    <div class="projects-container">
+        <!-- First Project Card -->
+        <div class="project-box">
+            <div class="project-img">
+                <img src="EngagementApp.png" alt="Faculty of Accounting and Informatics Project">
+            </div>
+            <div class="project-content">
+                <div class="category">Engagement Project</div>
+                <h3 class="project-title">For the Faculty of Accounting and Informatics</h3>
+                <p class="project-description">A comprehensive platform that centralizes and categorizes student projects within the Faculty of Accounting and Informatics.</p>
+                <div class="project-details hidden">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Centralized Project Repository</li>
+                        <li>Project Categorization</li>
+                        <li>User-Friendly Interface</li>
+                        <li>Collaboration Tools</li>
+                    </ul>
+                    <h4>Technologies Used:</h4>
+                    <p>HTML, CSS, JavaScript, ASP.NET Core, Entity Framework Core, Git and GitHub, Visual Studio, Azure DevOps</p>
+                </div>
+                <button class="btn view-more" onclick="toggleDetails(this)">View More</button>
+            </div>
+        </div>
+
+        <!-- Second Project Card -->
+        <div class="project-box">
+            <div class="project-img">
+                <img src="BulkyWeb.png" alt="Bulky Web Project">
+            </div>
+            <div class="project-content">
+                <div class="category">Bulky Web Project</div>
+                <h3 class="project-title">Movie Categoriser</h3>
+                <p class="project-description">A demo project for understanding CRUD operations in ASP.NET MVC.</p>
+                <div class="project-details hidden">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Movie Category Management</li>
+                        <li>User-friendly Interface</li>
+                        <li>Secure Authentication</li>
+                        <li>Data Validation</li>
+                    </ul>
+                    <h4>Technologies Used:</h4>
+                    <p>HTML, CSS, ASP.NET MVC, SQL Server, Entity Framework</p>
+                </div>
+                <button class="btn view-more" onclick="toggleDetails(this)">View More</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="contact-heading">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <span class="subtitle">Get in touch</span>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="info-item">
+                <i class='bx bx-envelope'></i>
+                <h3>Email</h3>
+                <p>mhlengimpendulo42@email.com</p>
+            </div>
+            <div class="info-item">
+                <i class='bx bx-phone'></i>
+                <h3>Phone</h3>
+                <p>0714429519</p>
+            </div>
+            <div class="info-item">
+                <i class='bx bx-map'></i>
+                <h3>Location</h3>
+                <p>212 King Dinuzulu Road,Bulwer,Ethekwini</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form>
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="input-box">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+<script src="main.js"></script>
+<script src="main.js"></script>
+<!-- Add this near the end of your HTML body -->
+<script>
+    function toggleDetails(button) {
+        const projectBox = button.closest('.project-box');
+        const details = projectBox.querySelector('.project-details');
+        details.classList.toggle('hidden');
+        button.textContent = details.classList.contains('hidden') ? 'View More' : 'View Less';
+    }
+</script>
+</body>
+</html>
