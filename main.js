@@ -1,27 +1,15 @@
-function toggleDetails(button) {
-    const projectBox = button.closest('.project-box');
-    const details = projectBox.querySelector('.project-details');
-    details.classList.toggle('hidden');
-    button.textContent = details.classList.contains('hidden') ? 'View More' : 'View Less';
-}
-
-// main.js
-
-
 document.addEventListener('DOMContentLoaded', function() {
-
-    alert("Update")
     // Rotating text functionality
-    var words = document.querySelectorAll('.cd-words-wrapper b');
-    var wordIndex = 0;
-    var isAnimating = false;
+    const words = document.querySelectorAll('.cd-words-wrapper b');
+    let wordIndex = 0;
+    let isAnimating = false;
 
     function switchWord() {
         if (isAnimating) return;
         isAnimating = true;
 
-        var currentWord = words[wordIndex];
-        var nextWord = words[(wordIndex + 1) % words.length];
+        const currentWord = words[wordIndex];
+        const nextWord = words[(wordIndex + 1) % words.length];
 
         // Hide current word
         currentWord.style.opacity = '0';
@@ -52,12 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Download button functionality
     const downloadButton = document.querySelector('.home-text .btn');
-    
     if (downloadButton) {
         downloadButton.addEventListener('click', function() {
-            // You can add analytics tracking here
             console.log('Resume downloaded');
-            // If you're using a service like Google Analytics, you would call their tracking function here
+            // Add your analytics tracking code here if needed
         });
     }
 
@@ -70,10 +56,75 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Add click event listeners to all 'View More' buttons
-    const viewMoreButtons = document.querySelectorAll('.project-box .btn');
-    viewMoreButtons.forEach(function(button) {
+    document.querySelectorAll('.project-box .btn').forEach(function(button) {
         button.addEventListener('click', function() {
             toggleDetails(this);
         });
+    });
+
+    // Updated Menu toggle functionality
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    function toggleMenu() {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+        
+        if (navbar.classList.contains('active')) {
+            navbar.style.display = 'block';
+            setTimeout(() => {
+                navbar.style.left = '0';
+            }, 10);
+        } else {
+            navbar.style.left = '-100%';
+            // Don't hide the navbar immediately
+        }
+    }
+
+    menuIcon.addEventListener('click', toggleMenu);
+
+    // Improved navbar link click handling
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                // Close menu on mobile
+                if (window.innerWidth <= 768) {
+                    menuIcon.classList.remove('bx-x');
+                    navbar.classList.remove('active');
+                    navbar.style.left = '-100%';
+                    // Don't hide the navbar immediately
+                }
+
+                // Smooth scroll to target section
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Update active link
+                document.querySelectorAll('.navbar a').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Hide navbar after scrolling (on mobile)
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                        navbar.style.display = 'none';
+                    }, 1000); // Adjust this delay as needed
+                }
+            }
+        });
+    });
+
+    // Ensure proper display on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navbar.style.display = 'flex';
+            navbar.style.left = '0';
+        } else if (!navbar.classList.contains('active')) {
+            navbar.style.display = 'none';
+            navbar.style.left = '-100%';
+        }
     });
 });
