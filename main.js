@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Rotating text functionality
     const words = document.querySelectorAll('.cd-words-wrapper b');

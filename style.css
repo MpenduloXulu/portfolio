@@ -902,3 +902,56 @@ section {
         margin-bottom: 0.5rem;
     }
 }
+
+
+/* Footer Styles */
+.footer-area {
+    background-color: var(--main-color);
+    padding: 2rem 0;
+    color: var(--bg-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.social-share {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-share li a {
+    color: var(--bg-color);
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.social-share li a:hover {
+    color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .footer-content p {
+        font-size: 1.2rem;
+    }
+
+    .social-share li a {
+        font-size: 1.8rem;
+    }
+}
