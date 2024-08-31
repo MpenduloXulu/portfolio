@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     // Rotating text functionality
     const words = document.querySelectorAll('.cd-words-wrapper b');
@@ -127,5 +126,61 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.display = 'none';
             navbar.style.left = '-100%';
         }
+    });
+
+    // Updated form submission code
+    var form = document.querySelector('.contact-form form');
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        var button = form.querySelector('button');
+        var originalText = button.innerHTML;  // Store the original text
+        button.innerHTML = "Sending...";
+        button.disabled = true;
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                button.innerHTML = "Message Sent!";
+                form.reset();
+                setTimeout(() => {
+                    button.innerHTML = originalText;  // Revert to original text
+                    button.disabled = false;
+                }, 3000); // Change back after 3 seconds
+            } else {
+                alert("Oops! There was a problem submitting your form");
+                button.innerHTML = originalText;  // Revert to original text
+                button.disabled = false;
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert("Oops! There was a problem submitting your form");
+            button.innerHTML = originalText;  // Revert to original text
+            button.disabled = false;
+        });
+    });
+
+    // New functionality for toggling additional info
+    function toggleAdditionalInfo(button) {
+        const content = button.closest('.skills-content');
+        const additionalInfo = content.querySelector('.additional-info');
+        
+        if (additionalInfo.classList.contains('hidden')) {
+            additionalInfo.classList.remove('hidden');
+            button.textContent = 'Read Less';
+        } else {
+            additionalInfo.classList.add('hidden');
+            button.textContent = 'Read More';
+        }
+    }
+
+    // Add click event listeners to all 'Read More' buttons
+    document.querySelectorAll('.skills-content .btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            toggleAdditionalInfo(this);
+        });
     });
 });
