@@ -745,13 +745,17 @@ section {
 }
 /* Contact section */
 .contact {
-    padding: clamp(3rem, 6vw, 6rem) clamp(5%, 9%, 9%) clamp(1rem, 2vw, 2rem);
+    padding: 5vh 5vw;
     background: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-heading {
     text-align: center;
-    margin-bottom: clamp(3rem, 5vw, 5rem);
+    margin-bottom: 5vh;
 }
 
 .contact-heading .heading {
@@ -788,7 +792,9 @@ section {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: clamp(1.5rem, 3vw, 3rem);
+    gap: 3vw;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .contact-info {
@@ -799,18 +805,18 @@ section {
 .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+    margin-bottom: 3vh;
 }
 
 .info-item i {
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     color: var(--main-color);
-    margin-right: clamp(1rem, 1.5vw, 1.5rem);
+    margin-right: 1.5vw;
 }
 
 .info-item h3 {
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 0.5vh;
 }
 
 .info-item p {
@@ -824,13 +830,13 @@ section {
 }
 
 .input-box {
-    margin-bottom: clamp(1rem, 2vw, 2rem);
+    margin-bottom: 2vh;
 }
 
 .input-box input,
 .input-box textarea {
     width: 100%;
-    padding: clamp(1rem, 1.5vw, 1.5rem);
+    padding: 1.5vh 1.5vw;
     font-size: clamp(1rem, 1.5vw, 1.6rem);
     color: var(--text-color);
     background: var(--snd-bg-color);
@@ -845,13 +851,13 @@ section {
 }
 
 .input-box textarea {
-    height: clamp(10rem, 15vw, 15rem);
+    height: 15vh;
     resize: none;
 }
 
 .btn {
     display: inline-block;
-    padding: clamp(0.8rem, 1vw, 1rem) clamp(2rem, 2.8vw, 2.8rem);
+    padding: 1vh 2vw;
     background: var(--main-color);
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--main-color);
@@ -866,6 +872,7 @@ section {
 
 .btn:hover {
     box-shadow: none;
+    background: var(--text-color);
 }
 
 /* Responsive design */
@@ -883,26 +890,37 @@ section {
 
 @media (max-width: 768px) {
     .contact {
-        padding: clamp(2rem, 4vw, 3rem) clamp(3%, 5%, 5%) clamp(1rem, 2vw, 1.5rem);
+        padding: 3vh 3vw;
     }
 
-    .contact-heading .heading {
-        font-size: clamp(2rem, 4vw, 3.5rem);
-    }
-}
-
-@media (max-width: 480px) {
     .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .info-item i {
-        margin-bottom: 0.5rem;
+        margin-bottom: 2vh;
     }
 }
 
+
+/* Formspree*/
+.input-box input[type="file"] {
+    padding: 10px;
+    background: var(--snd-bg-color);
+    border-radius: 0.8rem;
+    border: 0.2rem solid var(--bg-color);
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.input-box input[type="file"]::-webkit-file-upload-button {
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.input-box input[type="file"]::-webkit-file-upload-button:hover {
+    background: var(--text-color);
+}
 
 /* Footer Styles */
 .footer-area {
